@@ -1,0 +1,22 @@
+2016-09-27 14:31:02: (log.c.97) server started 
+2016-09-27 14:31:53: (mod_fastcgi.c.1768) connect failed: Connection refused on unix:/home/qiusugang/simpleapp/socket/rails.socket-2 
+2016-09-27 14:31:53: (mod_fastcgi.c.2956) backend died; we'll disable it for 5 seconds and send the request to another backend instead: reconnects: 0 load: 1 
+2016-09-27 14:32:46: (server.c.1466) server stopped by UID = 500 PID = 25238 
+2016-09-27 14:32:49: (log.c.97) server started 
+2016-09-27 14:33:13: (mod_fastcgi.c.1768) connect failed: Connection refused on unix:/home/qiusugang/simpleapp/socket/rails.socket-2 
+2016-09-27 14:33:13: (mod_fastcgi.c.2956) backend died; we'll disable it for 5 seconds and send the request to another backend instead: reconnects: 0 load: 1 
+2016-09-27 14:43:36: (server.c.1466) server stopped by UID = 500 PID = 25379 
+2016-09-27 14:43:39: (log.c.97) server started 
+2016-09-27 14:44:27: (server.c.1466) server stopped by UID = 500 PID = 25399 
+2016-09-27 14:44:32: (log.c.97) server started 
+2016-09-27 15:31:32: (server.c.1466) server stopped by UID = 500 PID = 26004 
+2016-09-27 15:31:34: (log.c.97) server started 
+2016-09-27 15:32:18: (server.c.1466) server stopped by UID = 500 PID = 26038 
+2016-09-27 15:32:20: (log.c.97) server started 
+2016-09-27 15:37:49: (server.c.1466) server stopped by UID = 500 PID = 26337 
+2016-09-27 15:37:51: (log.c.97) server started 
+2016-09-27 15:53:13: (server.c.1466) server stopped by UID = 500 PID = 26561 
+2016-09-27 15:53:16: (log.c.97) server started 
+2016-09-27 17:29:37: (server.c.1466) server stopped by UID = 500 PID = 27155 
+2016-09-27 17:29:39: (log.c.97) server started 
+2016-09-27 18:34:27: (server.c.1466) server stopped by UID = 500 PID = 27557 

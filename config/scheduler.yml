@@ -1,0 +1,6 @@
+get_weixin_token:
+  cron: "*/5 * * * *"
+  class: CronjobWorker
+  queue: high
+  args: from schedule worker
+  description: "This job queues all content for getting weixin token"
