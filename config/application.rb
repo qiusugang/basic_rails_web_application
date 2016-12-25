@@ -25,5 +25,15 @@ module Simpleapp
     config.generators do |g|
       g.assets false
     end
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.exmail.qq.com',
+    port:                 25,
+    domain:               '2duche.com',
+    user_name:            'system@2duche.com',
+    password:             'sys150288',
+    authentication:       'login',
+    enable_starttls_auto: false  }
   end
 end

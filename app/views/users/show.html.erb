@@ -6,13 +6,17 @@
 </p>
 
 <p>
-  <strong>Grend:</strong>
-  <%= @user.grend %>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
 </p>
 
 <p>
   <strong>Age:</strong>
   <%= @user.age %>
+</p>
+
+<p>
+<%= image_tag(@user.avatar_url(:large)) if @user.avatar_url %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<form action="/users/login" id="loginform" method="post" name="loginform">
+
+  <p>
+    <label for="username">user name：</label>
+
+    <input type="text" name="user_login" id="user_login" size="20" value="" style="height:20px;" />
+  </p>
+  <p><label for="user_password">password：</label>
+    <input type="password" name="user_password" id="user_password" size="20" style="height:20px;"/>
+  </p>
+
+  <input type="submit" class="field" name="submit" value="Login" style="width:80px; margin-left:94px;">
+</form>

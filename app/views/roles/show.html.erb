@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @role.name %>
+</p>
+
+<p>
+  <strong>description:</strong>
+  <%= @role.description %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @role.parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_role_path(@role) %> |
+<%= link_to 'Back', roles_path %>
+<br>
+
+<h2>Role <%= @role.name %> has rules</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Controller name</th>
+    <th>Action name</th>
+    <th>Params</th>
+    <th>Remove</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @rules.each do |rule| %>
+      <tr>
+        <td><%= rule.controller_name %></td>
+        <td><%= rule.action_name %></td>
+        <td><%= rule.params %></td>
+        <td><a href='<%= "/roles/remove/#{@role.id}/#{rule.id}" %>'>remove</a></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>Role <%= @role.name %> exclude rules</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Controller name</th>
+    <th>Action name</th>
+    <th>Params</th>
+    <th>Add a rule into role</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @exclude_rules.each do |rule| %>
+      <tr>
+        <td><%= rule.controller_name %></td>
+        <td><%= rule.action_name %></td>
+        <td><%= rule.params %></td>
+        <td><a href='<%= "/roles/add/#{@role.id}/#{rule.id}" %>'>Add</a></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Controller name:</strong>
+  <%= @rule.controller_name %>
+</p>
+
+<p>
+  <strong>Action name:</strong>
+  <%= @rule.action_name %>
+</p>
+
+<p>
+  <strong>Params:</strong>
+  <%= @rule.params %>
+</p>
+
+<%= link_to 'Edit', edit_rule_path(@rule) %> |
+<%= link_to 'Back', rules_path %>

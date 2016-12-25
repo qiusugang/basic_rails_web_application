@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
-    TestJob.perform_later("This is test")
+    #TestJob.perform_later("This is test")
   end
 
   # GET /articles/1
@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    @article.user_id = session[:user]['id']
 
     respond_to do |format|
       if @article.save

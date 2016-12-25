@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    #TestJob.perform_later("This is test")
-    cachevalue = Rails.cache.read('permission')
-    if cachevalue == nil || ''== cachevalue
-      Rails.cache.write('permission', "test")
-    end
-    @users = User.all
+    TestJob.perform_later("This is test")
+    # cache_value = Rails.cache.read('permission')
+    # if cache_value == nil || ''== cache_value
+    #   Rails.cache.write('permission', "test")
+    # end
+    @users = User.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /users/1
@@ -20,6 +20,24 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.role_id = 4
+  end
+
+  def login
+    if request.method == 'POST'
+      name = params[:user_login]
+      password = params[:user_password]
+      @user = User.find_user(name, password)
+      if @user
+        session[:user] = @user
+        redirect_to @user, notice: 'Login success...'
+      end
+    end
+  end
+
+  def logout
+    reset_session
+    redirect_to "/", notice: 'Logout success...'
   end
 
   # GET /users/1/edit
@@ -29,10 +47,17 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    user_fields = user_params
+    salt = User.create_random
+    user_fields['encrypt_password'] = User.sha1(user_fields['encrypt_password'], salt)
+    user_fields['password_salt'] = salt
+    user_fields['role_id'] = 4
+    @user = User.new(user_fields)
 
     respond_to do |format|
       if @user.save
+        session[:user] = @user
+        NotifierMailer.welcome_email(@user).deliver
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -45,8 +70,18 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    user_fields = user_params
+    if user_params['encrypt_password'] && user_params['encrypt_password'].strip != ''
+      salt = User.create_random
+      user_fields['encrypt_password'] = User.sha1(user_fields['encrypt_password'], salt)
+      user_fields['password_salt'] = salt
+    else
+      user_fields.delete('encrypt_password')
+      user_fields.delete('password_salt')
+    end
+
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(user_fields)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -74,6 +109,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :grend, :age)
+      params.require(:user).permit(:name, :gender, :age, :avatar, :role_id, :encrypt_password, :password_salt, :email)
     end
 end

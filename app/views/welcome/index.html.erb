@@ -1,2 +1,13 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
+<p><a href="/users/">users list</a></p>
+<p><a href="/roles/">roles list</a></p>
+<p><a href="/rules/">rules list</a></p>
+<p><a href="/settings/">system setting</a></p>
+<p><a href="/articles/">article list</a></p>
+<% if session[:user] %>
+    <p>Login user: <%= session[:user]["name"] %></p>
+<% else %>
+    <p>no user login <a href="/users/login">login</a></p>
+<% end %>
+

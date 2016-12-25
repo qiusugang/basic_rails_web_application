@@ -1,4 +1,4 @@
-source 'https://ruby.taobao.org'
+source 'http://gems.ruby-china.org/'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -23,15 +23,16 @@ gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'mini_magick'
 gem 'carrierwave'
-gem 'fcgi', platforms: [ :ruby_21, :ruby_22, :ruby_23, :mri_21, :mri_22, :mri_23]
+#gem 'fcgi', platforms: [ :ruby_21, :ruby_22, :ruby_23, :mri_21, :mri_22]
 gem 'dalli'
+gem 'will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  #gem 'byebug', platform: :mri
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
+  #gem 'web-console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
