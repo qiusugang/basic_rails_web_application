@@ -32,7 +32,7 @@ module Simpleapp
     port:                 25,
     domain:               '2duche.com',
     user_name:            'system@2duche.com',
-    password:             'sys150288',
+    password:             '12345678',
     authentication:       'login',
     enable_starttls_auto: false  }
   end
