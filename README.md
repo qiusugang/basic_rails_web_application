@@ -7,9 +7,11 @@ Rails 5 sample web application, that include sidekiq job queue/scheduler, image 
 * install method
 
   mysql -uroot -pxxxxx
+  
   create database simpledb;
 
   mysql -uroot -pxxxxx simpledb < ./db/db1104.sql
   
   admin user: testuser1, 
+  
   password: 123456
