@@ -1,7 +1,3 @@
 class CkController < ActionController::Base
-
-  def verify_authenticity_token
-    logger.info "## verify_authenticity_token"
-    true
-  end
+  protect_from_forgery with: :exception
 end

@@ -4239,3 +4239,155 @@ puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendered c:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (654.7ms)
 DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at D:/github/simpleapp/config/routes.rb:20)
 DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at D:/github/simpleapp/config/routes.rb:20)
+DEPRECATION WARNING: Using a dynamic :controller segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at D:/github/simpleapp/config/routes.rb:20)
+DEPRECATION WARNING: Using a dynamic :action segment in a route is deprecated and will be removed in Rails 5.2. (called from block in <top (required)> at D:/github/simpleapp/config/routes.rb:20)
+Started GET "/" for ::1 at 2017-03-07 18:49:33 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  * Authorization filter for welcome#index
+  [1m[36mSetting Load (0.0ms)[0m  [1m[34mselect value from settings where name='public_controller'[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 84ms (Views: 58.7ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/articles/" for ::1 at 2017-03-07 18:50:20 +0800
+Processing by ArticlesController#index as HTML
+  * Authorization filter for articles#index
+  [1m[36mSetting Load (1.0ms)[0m  [1m[34mselect value from settings where name='public_action'[0m
+  [1m[36mCredential Load (1.0ms)[0m  [1m[34mSELECT  `credentials`.* FROM `credentials` WHERE `credentials`.`match` = 'articles#index#3' LIMIT 1[0m
+  * Authorization parameters: true = true
+  Rendering articles/index.html.erb within layouts/articles
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT `articles`.* FROM `articles`[0m
+  Rendered articles/index.html.erb within layouts/articles (19.0ms)
+Completed 200 OK in 68ms (Views: 21.2ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/articles/3/edit" for ::1 at 2017-03-07 18:50:22 +0800
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  * Authorization filter for articles#edit
+  [1m[36mCredential Load (0.0ms)[0m  [1m[34mSELECT  `credentials`.* FROM `credentials` WHERE `credentials`.`match` = 'articles#edit#3' LIMIT 1[0m
+  * Authorization parameters: true = true
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`id` = 3 LIMIT 1[0m
+  Rendering articles/edit.html.erb within layouts/articles
+  Rendered articles/_form.html.erb (34.0ms)
+  Rendered articles/edit.html.erb within layouts/articles (41.0ms)
+Completed 200 OK in 64ms (Views: 54.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=GB8C" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/editor.css?t=GB8C" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/lang/zh-cn.js?t=GB8C" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/styles.js?t=GB8C" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/plugins/copyformatting/styles/copyformatting.css" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/contents.css?t=GB8C" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/icons.png?t=580bcaf" for ::1 at 2017-03-07 18:50:22 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/dialog.css?t=GB8C" for ::1 at 2017-03-07 18:50:25 +0800
+Started GET "/assets/ckeditor/plugins/image/dialogs/image.js?t=GB8C" for ::1 at 2017-03-07 18:50:25 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/images/refresh.png" for ::1 at 2017-03-07 18:50:25 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/images/lock.png" for ::1 at 2017-03-07 18:50:25 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/images/close.png" for ::1 at 2017-03-07 18:50:25 +0800
+Started GET "/ckeditor/pictures?CKEditor=article_content&CKEditorFuncNum=1&langCode=zh-cn" for ::1 at 2017-03-07 18:50:26 +0800
+Processing by Ckeditor::PicturesController#index as HTML
+  Parameters: {"CKEditor"=>"article_content", "CKEditorFuncNum"=>"1", "langCode"=>"zh-cn"}
+  Rendering c:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/ckeditor-4.2.2/app/views/ckeditor/pictures/index.html.erb within layouts/ckeditor/application
+  [1m[36mCkeditor::Picture Load (11.1ms)[0m  [1m[34mSELECT  `ckeditor_assets`.* FROM `ckeditor_assets` WHERE `ckeditor_assets`.`type` IN ('Ckeditor::Picture') ORDER BY id desc LIMIT 24 OFFSET 0[0m
+  Rendered collection of c:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/ckeditor-4.2.2/app/views/ckeditor/shared/_asset.html.erb [0 times] (0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `ckeditor_assets` WHERE `ckeditor_assets`.`type` IN ('Ckeditor::Picture')[0m
+  Rendered c:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/ckeditor-4.2.2/app/views/ckeditor/pictures/index.html.erb within layouts/ckeditor/application (40.1ms)
+  Rendered c:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/ckeditor-4.2.2/app/views/ckeditor/shared/_asset_tmpl.html.erb (1.0ms)
+Completed 200 OK in 149ms (Views: 93.8ms | ActiveRecord: 45.9ms)
+
+
+Started POST "/ckeditor/pictures?qqfile=5a2c5b191b93c93698d2fdf8718c32e7.JPG%402o_60Q_1pr_200p_1wh.jpg" for ::1 at 2017-03-07 18:50:30 +0800
+Processing by Ckeditor::PicturesController#create as */*
+  Parameters: {"qqfile"=>"5a2c5b191b93c93698d2fdf8718c32e7.JPG@2o_60Q_1pr_200p_1wh.jpg"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `ckeditor_assets` (`data_file_name`, `data_content_type`, `data_file_size`, `type`, `created_at`, `updated_at`) VALUES ('5a2c5b191b93c93698d2fdf8718c32e7.JPG_2o_60Q_1pr_200p_1wh.jpg', 'application/octet-stream', 509964, 'Ckeditor::Picture', '2017-03-07 10:50:32', '2017-03-07 10:50:32')[0m
+  [1m[35m (56.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 1978ms (Views: 0.4ms | ActiveRecord: 67.2ms)
+
+
+Started POST "/ckeditor/pictures?qqfile=cba13ca92a4e1da37649f0fe96f96161.jpg%402o_60Q_1pr_200p_1wh.jpg" for ::1 at 2017-03-07 18:50:35 +0800
+Processing by Ckeditor::PicturesController#create as */*
+  Parameters: {"qqfile"=>"cba13ca92a4e1da37649f0fe96f96161.jpg@2o_60Q_1pr_200p_1wh.jpg"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `ckeditor_assets` (`data_file_name`, `data_content_type`, `data_file_size`, `type`, `created_at`, `updated_at`) VALUES ('cba13ca92a4e1da37649f0fe96f96161.jpg_2o_60Q_1pr_200p_1wh.jpg', 'application/octet-stream', 75110, 'Ckeditor::Picture', '2017-03-07 10:50:35', '2017-03-07 10:50:35')[0m
+  [1m[35m (60.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 415ms (Views: 0.4ms | ActiveRecord: 60.5ms)
+
+
+Started GET "/assets/ckeditor/skins/moono-lisa/editor.css?t=GB8C" for ::1 at 2017-03-07 18:50:50 +0800
+Started GET "/assets/ckeditor/plugins/icons.png?t=GB8C" for ::1 at 2017-03-07 18:50:50 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/icons.png?t=580bcaf" for ::1 at 2017-03-07 18:50:50 +0800
+Started PATCH "/articles/3" for ::1 at 2017-03-07 18:51:02 +0800
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fbda9d0yEbfWtPX5BIwurgmJb1a/v+SXakA7w87cyL0oLYbO6CIhI5hvsPWK/9N2g01Y5jGaoEDp0DooC9qXIg==", "article"=>{"title"=>"The test second acticle", "content"=>"<h2><strong>Axure RP首页</strong></h2>\r\n\r\n<p>Axure RP首页、<span style=\"font-size:14px\">文档和下载</span> - <span style=\"color:#ff0000\"><span style=\"font-size:12px\"><span style=\"background-color:#add8e6\">原型制作软件 - 开源中国社区</span></span></span> AxureRP 是一个快速原型制作软件，由美国Axure Software Solutions, Inc.公司开发。 Axure RP 能让操作它的人快速准确的创建基于Web的<strong>网站流程图</strong>、原型页面、交互体验 ... www.oschina.net/p/axure+rp</p>\r\n\r\n<p><strong><img alt=\"\" src=\"/uploads/ckeditor/pictures/2/content_cba13ca92a4e1da37649f0fe96f96161.jpg_2o_60Q_1pr_200p_1wh.jpg\" style=\"width: 200px; height: 113px;\" /></strong></p>\r\n\r\n<ol>\r\n\t<li>test1</li>\r\n\t<li>test2</li>\r\n\t<li>test3</li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n"}, "commit"=>"Update Article", "id"=>"3"}
+  * Authorization filter for articles#update
+  [1m[36mCredential Load (0.0ms)[0m  [1m[34mSELECT  `credentials`.* FROM `credentials` WHERE `credentials`.`match` = 'articles#update#3' LIMIT 1[0m
+  * Authorization parameters: true = true
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE `articles` SET `content` = '<h2><strong>Axure RP首页</strong></h2>\r\n\r\n<p>Axure RP首页、<span style=\"font-size:14px\">文档和下载</span> - <span style=\"color:#ff0000\"><span style=\"font-size:12px\"><span style=\"background-color:#add8e6\">原型制作软件 - 开源中国社区</span></span></span> AxureRP 是一个快速原型制作软件，由美国Axure Software Solutions, Inc.公司开发。 Axure RP 能让操作它的人快速准确的创建基于Web的<strong>网站流程图</strong>、原型页面、交互体验 ... www.oschina.net/p/axure+rp</p>\r\n\r\n<p><strong><img alt=\"\" src=\"/uploads/ckeditor/pictures/2/content_cba13ca92a4e1da37649f0fe96f96161.jpg_2o_60Q_1pr_200p_1wh.jpg\" style=\"width: 200px; height: 113px;\" /></strong></p>\r\n\r\n<ol>\r\n	<li>test1</li>\r\n	<li>test2</li>\r\n	<li>test3</li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n', `updated_at` = '2017-03-07 10:51:02' WHERE `articles`.`id` = 3[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/articles/3
+Completed 302 Found in 34ms (ActiveRecord: 25.5ms)
+
+
+Started GET "/articles/3" for ::1 at 2017-03-07 18:51:02 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  * Authorization filter for articles#show
+  [1m[36mCredential Load (0.0ms)[0m  [1m[34mSELECT  `credentials`.* FROM `credentials` WHERE `credentials`.`match` = 'articles#show#3' LIMIT 1[0m
+  * Authorization parameters: true = true
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`id` = 3 LIMIT 1[0m
+  Rendering articles/show.html.erb within layouts/articles
+  Rendered articles/show.html.erb within layouts/articles (2.0ms)
+Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-07 18:51:04 +0800
+Processing by ArticlesController#index as HTML
+  * Authorization filter for articles#index
+  * Authorization parameters: true = true
+  Rendering articles/index.html.erb within layouts/articles
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT `articles`.* FROM `articles`[0m
+  Rendered articles/index.html.erb within layouts/articles (3.0ms)
+Completed 200 OK in 21ms (Views: 13.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles/3/edit" for ::1 at 2017-03-07 18:51:05 +0800
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  * Authorization filter for articles#edit
+  * Authorization parameters: true = true
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`id` = 3 LIMIT 1[0m
+  Rendering articles/edit.html.erb within layouts/articles
+  Rendered articles/_form.html.erb (2.0ms)
+  Rendered articles/edit.html.erb within layouts/articles (7.5ms)
+Completed 200 OK in 26ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=GB8C" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/editor.css?t=GB8C" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/lang/zh-cn.js?t=GB8C" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/styles.js?t=GB8C" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/plugins/copyformatting/styles/copyformatting.css" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/contents.css?t=GB8C" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/assets/ckeditor/skins/moono-lisa/icons.png?t=580bcaf" for ::1 at 2017-03-07 18:51:05 +0800
+Started GET "/articles/3" for ::1 at 2017-03-07 18:51:08 +0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  * Authorization filter for articles#show
+  * Authorization parameters: true = true
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  `articles`.* FROM `articles` WHERE `articles`.`id` = 3 LIMIT 1[0m
+  Rendering articles/show.html.erb within layouts/articles
+  Rendered articles/show.html.erb within layouts/articles (1.0ms)
+Completed 200 OK in 23ms (Views: 14.2ms | ActiveRecord: 1.0ms)
+
+
