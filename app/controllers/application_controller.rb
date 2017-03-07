@@ -3,7 +3,12 @@ class ApplicationController < ActionController::Base
   before_action :authorization_rules
   helper_method :is_admin?
 
-  protected  
+  protected
+
+  def verify_authenticity_token
+    true
+  end
+  
   def set_charset
     content_type = headers["Content-Type"] || 'text/html'
     if /^text\/html/.match(content_type)

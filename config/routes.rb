@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   resources :settings
   match 'users/login' => 'users#login', :via => [:get, :post]
   match 'users/logout' => 'users#logout', :via => [:get, :post]

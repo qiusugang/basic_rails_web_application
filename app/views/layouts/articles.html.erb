@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple app</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'jquery.min' %>
+    <script src="/javascripts/jquery_ujs.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+  <% if session[:user] %>
+      <p><a href="/">Home</a> Welcome: <%= session[:user]["name"] %> <a href="/users/logout">[Logout]</a> </p>
+  <% else %>
+      <p><a href="/">Home</a> Please login <a href="/users/login">login</a> or <a href="/users/new">register</a></p>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>
