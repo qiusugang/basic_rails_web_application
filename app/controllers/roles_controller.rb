@@ -39,7 +39,7 @@ class RolesController < ApplicationController
   end
 
   def remove
-    RolesRule.delete_all('role_id': params[:id], 'rule_id': params[:rule_id])
+    RolesRule.where('role_id=? and rule_id=?',params[:id],params[:rule_id]).delete_all()
     redirect_to "/roles/#{params[:id]}", notice: "Role's rule was successfully removed."
   end
 
