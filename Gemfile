@@ -1,10 +1,10 @@
-source 'http://gems.ruby-china.org/'
+source 'https://gems.ruby-china.com/'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '5.2.3'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -19,17 +19,20 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'ckeditor'
+gem 'ckeditor', '4.2.4'
 
 gem "redis"
 gem "redis-namespace"
-gem 'sidekiq'
+gem 'sidekiq', '5.2.3'
 gem 'sidekiq-scheduler'
 gem 'mini_magick'
 gem 'carrierwave'
 #gem 'fcgi', platforms: [ :ruby_21, :ruby_22, :ruby_23, :mri_21, :mri_22]
 gem 'dalli'
 gem 'will_paginate'
+gem 'foreman'
+gem 'webpacker'
+gem 'vueonrails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
