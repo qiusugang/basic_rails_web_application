@@ -1,12 +1,19 @@
 {
-  "devDependencies": {
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
-  },
   "dependencies": {
-    "@rails/webpacker": "5.1.1",
+    "@rails/webpacker": "4.2.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/runtime": "^7.10.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }

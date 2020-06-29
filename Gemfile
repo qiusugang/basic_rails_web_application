@@ -31,7 +31,7 @@ gem 'carrierwave'
 gem 'dalli'
 gem 'will_paginate'
 gem 'foreman'
-gem 'webpacker'
+gem 'webpacker', '~> 4.x'
 gem 'vueonrails'
 
 group :development, :test do

@@ -1,0 +1,23 @@
+{
+  "env": {
+    "test": {
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ]
+    }
+  },
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "uglify": true
+        }
+      }
+    ]
+  ],
+  "plugins": ["@babel/plugin-transform-runtime","@babel/plugin-proposal-class-properties",
+    "transform-object-rest-spread"
+  ]
+}
