@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   match 'roles/remove/:id/:rule_id' => 'roles#remove', :via => [:get, :post]
   match 'roles/add/:id/:rule_id' => 'roles#add', :via => [:get, :post]
 
+  match 'netcars/carlist' => 'netcars#carlist', :via => [:get, :post]
+
+  resources :netcars
   resources :users
   resources :credentials
   resources :roles
