@@ -2,6 +2,7 @@
   "dependencies": {
     "@rails/webpacker": "4.2.2",
     "gridjs-vue": "^0.5.2",
+    "muse-ui": "^3.0.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11"
@@ -9,6 +10,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",

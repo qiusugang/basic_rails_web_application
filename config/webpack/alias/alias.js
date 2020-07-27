@@ -7,7 +7,7 @@ module.exports = {
       "@": "../parts",
       vue$: "vue/dist/vue.esm.js",
       tests: "../tests",
-      locales: "../locales"
+      locales: "../locales",
     },
     extensions: [".vue"]
   }

@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <grid :cols="cols" :rows="rows" :search="true" :sort="true"></grid>
-  </div>
+<div id="app">
+  <grid :cols="cols" :rows="rows" :search="true" :sort="true"></grid>
+</div>
 </template>
 
 <script>
