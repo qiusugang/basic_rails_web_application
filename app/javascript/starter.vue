@@ -1,7 +1,7 @@
 <template>
 <div style="padding: 32px;">
   <mu-date-input type="dateTime">
-    <template slot="day" slot-scope="{ selected, date, disabled, now}">
+    <template slot="day" slot-scope="{ selected, date}">
       <div class="mu-day-button-bg"></div>
       <div class="mu-day-button-content">
         <span class="mu-day-button-text">{{date.getDate()}}日</span>
