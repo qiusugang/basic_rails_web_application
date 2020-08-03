@@ -1,5 +1,7 @@
 <template>
 <div id="app">
+  <input type="text" v-model="qstring" placeholder="输入车辆型号..."> <button @click="onSearch">搜索</button>
+  <p> 输入的内容是： {{qstring}} </p>
   <grid :cols="cols" :rows="rows" :search="false" :sort="true" :server="server" :pagination="pagination"></grid>
 </div>
 </template>
@@ -12,8 +14,14 @@ export default {
   components: {
     Grid
   },
+  methods: {
+    onSearch: function() {
+      alert(this.qstring);
+    }
+  },
   data() {
     return {
+      qstring: '宝马5系2015款',
       cols: ['Car name', 'Purchase date', 'Mileage', 'City', 'Price'],
       pagination: true,
       server: {
