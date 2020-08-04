@@ -11,7 +11,7 @@ class NetCar < ApplicationRecord
             query: query,
             type: "most_fields",
             analyzer: "ik_max_word",
-            operator: "AND",
+#            operator: "AND",
             fields: ['city_name^10', 'car_name', 'province_name']
           }
         },
